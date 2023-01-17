@@ -11,3 +11,10 @@ class ShortenerURLModelSerializer(serializers.ModelSerializer):
             'url': {'write_only': True},
             'shortcode': {'read_only': True},
         }
+
+
+class URLModelSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ShortenerURL
+        fields = ['url']
