@@ -9,7 +9,6 @@ from shortener.models import ShortenerURL
 
 
 class ShortenerURLCreateAPIView(APIView):
-
     def post(self, request):
         serializer = ShortenerURLModelSerializer(data=request.data)
         if serializer.is_valid():
@@ -19,7 +18,6 @@ class ShortenerURLCreateAPIView(APIView):
 
 
 class ShortenerURLGetAPIView(APIView):
-
     def get_object(self, slug):
         try:
             return ShortenerURL.objects.filter(shortcode=slug).first()
